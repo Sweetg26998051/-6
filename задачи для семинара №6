@@ -1,0 +1,40 @@
+Задача 41: Пользователь вводит с клавиатуры или задает самостоятельно M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
+
+Console.WriteLine("введите значения");
+String numb = Convert.ToString(Console.ReadLine());
+string [] Numbers = numb.Split (" ");
+int [] ConvertNumbers = new int [Numbers.Length];
+for (int i = 0; i < Numbers.Length; i++)
+{
+    ConvertNumbers [i] = Convert.ToInt32 (Numbers[i]);
+}
+int GetCountOfPosNumbers (int [] array)
+{
+    int count = 0;
+    for (int i = 0; i<array.Length; i++)
+    {
+        if (array [i] > 0)
+        {
+            count = count + 1;
+        }
+    }
+    return count;
+}
+System.Console.WriteLine ("числа больше нуля введено раз");
+System.Console.WriteLine (GetCountOfPosNumbers(ConvertNumbers));
+
+
+Задача 43. Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями 
+y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем или задаются вручную.
+
+Console.WriteLine("введите b1");
+double b1 = int.Parse (Console.ReadLine());
+Console.WriteLine("введите k1");
+double k1 = int.Parse (Console.ReadLine());
+Console.WriteLine("введите b2");
+double b2 = int.Parse (Console.ReadLine());
+Console.WriteLine("введите k2");
+double k2 = int.Parse (Console.ReadLine());
+double X = (b2 - b1) / (k1 - k2);
+double Y =k1 * (b2 - b1) / (k1 - k2) + b1;
+Console.WriteLine ($"точки пересечения двух прямых X = {X:0.000} , Y = {Y:0.000}\n");
